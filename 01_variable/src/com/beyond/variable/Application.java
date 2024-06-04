@@ -1,6 +1,7 @@
 package com.beyond.variable;
 
 import com.beyond.variable.practice.A_Variable;
+import com.beyond.variable.practice.B_ConsoleOutput;
 
 public class Application {
     public static void main(String[] args) {
@@ -13,6 +14,9 @@ public class Application {
         //     변수명.메소드명();
         variable.variableTest();
         variable.practice();
+        
+        B_ConsoleOutput output = new B_ConsoleOutput();
+        output.valuePrint();
         
     }
 }
