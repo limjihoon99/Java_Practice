@@ -54,9 +54,8 @@ public class Application {
 		System.out.println(book1.hashCode());
 		System.out.println(book2.hashCode());
 		System.out.println(book3.hashCode());
-		System.out.println("Hello".hashCode());
-		System.out.println(new String("Hello").hashCode());
+//		System.out.println("Hello".hashCode());
+//		System.out.println(new String("Hello").hashCode());
 		System.out.println();
-
 	}
 }
