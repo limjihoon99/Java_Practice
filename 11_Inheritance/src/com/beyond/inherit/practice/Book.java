@@ -48,27 +48,50 @@ public class Book /* extends Object */ {
 	 *   - 기본적으로 Object 클래스에서는 주소값을 비교하는데 자식 클래스에서 객체들이 가지고 있는 필드의 값들을
 	 *     비교하도록 재정의할 수 있다.
 	 */
-	@Override
-	public boolean equals(Object obj) {
-		boolean result = false;
-		Book target = (Book)obj;		
-		
-		result = this.title.equals(target.title) && this.author.equals(target.author) &&
-					this.price == target.price;
-		
-		return result;
-	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		boolean result = false;
+//		Book target = (Book)obj;		
+//		
+//		result = this.title.equals(target.title) && this.author.equals(target.author) &&
+//					this.price == target.price;
+//		
+//		return result;
+//	}
 
 	/*
 	 * 3. Object 클래스의 hashCode() 메소드
 	 *   - 객체의 해시 코드란 객체를 식별할 수 있는 하나의 정수값을 의미한다.
 	 *   - 기본적으로 Object 클래스의 hashCode() 메소드는 객체의 메모리 번지를 이용해서 만들어주기 때문에
 	 *     객체마다 다른 값을 가지고 있다.
+	 *   - 컬렉션들은 hashCode() 메소드를 가지고 두 객체가 동등한지 비교한다.
+	 *     해시 코드값이 같으면 equals() 메소드로 다시 비교한다.
 	 */
+//	@Override
+//	public int hashCode() {	
+//		/*
+//		 * 해당 객체의 필드 값들을 하나의 문자열로 합쳐서 해당 문자열의 해시 코드를 리턴해준다.
+//		 * 
+//		 * String 클래스에서 같은 문자열일 경우 해당 문자열의 hashCode는 같도록 이미 재정의되어 있다.
+//		 */
+//		return (this.title + this.author + this.price).hashCode();
+//	}
+	
+//	이클립스를 사용해서 재정의
 	@Override
 	public int hashCode() {
-		
-		return super.hashCode();
+		return Objects.hash(author, price, title);
 	}
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(author, other.author) && price == other.price && Objects.equals(title, other.title);
+	}
 }
