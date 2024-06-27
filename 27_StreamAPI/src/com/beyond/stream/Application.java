@@ -1,6 +1,7 @@
 package com.beyond.stream;
 
-import com.beyond.stream.practice.C_Sorted;
+import com.beyond.stream.practice.G_Aggregate;
+import com.beyond.stream.practice.H_Collect;
 
 public class Application {
 	/*
@@ -26,7 +27,32 @@ public class Application {
 //		new B_Filtering().method2();
 		
 //		new C_Sorted().method1();
-		new C_Sorted().method2();
+//		new C_Sorted().method2();
+		
+//		new D_Mapping().method1();
+//		new D_Mapping().method2();
+		
+//		new E_Looping().method1();
+		
+//		new F_Match().method1();
+//		new F_Match().method2();
+		
+//		new G_Aggregate().method1();
+		
+		new H_Collect().method1();
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 }
